@@ -1,4 +1,5 @@
 <table border="1" cellpadding="4" cellspacing="0">
+    defined('BASEPATH') OR exit('No direct script access allowed');
     <tr>
         <th>Induk</th>
         <th>Nama Lengkap</th>

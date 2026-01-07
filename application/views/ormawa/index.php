@@ -1,32 +1,22 @@
-<h2>Data Ormawa</h2>
-<a href="<?= site_url('ormawa/tambah') ?>">+ Tambah Ormawa</a>
-<br><br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Management Ormawa</title>
+</head>
+<body>
 
+<h2>Management Ormawa</h2>
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>No</th>
-        <th>Nama Ormawa</th>
-        <th>Aksi</th>
-    </tr>
+<p>Login sebagai: <b><?= $this->session->userdata('username') ?></b></p>
+<a href="<?= site_url('Auth/logout') ?>">Logout</a>
 
-    <?php $no=1; foreach($ormawa as $o): ?>
-    <tr>
-        <td><?= $no++ ?></td>
-        <td><?= $o->nama_ormawa ?></td>
-        <td>
-            <a href="<?= site_url('ormawa/hapus/'.$o->id_ormawa) ?>"
-       onclick="return confirm('Yakin hapus data?')">
-       Hapus
-             </a>
-             <td>
-        <a href="<?= site_url('ormawa/edit/'.$o->id_ormawa) ?>">Edit</a> |
-        <a href="<?= site_url('ormawa/hapus/'.$o->id_ormawa) ?>"
-       onclick="return confirm('Yakin hapus?')">Hapus</a>
-        </td>
+<hr>
 
-        </td>
+<ul>
+<?php foreach ($ormawa as $o): ?>
+    <li><?= $o->nama_ormawa ?></li>
+<?php endforeach; ?>
+</ul>
 
-    </tr>
-    <?php endforeach; ?>
-</table>
+</body>
+</html>
